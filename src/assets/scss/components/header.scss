@@ -1,9 +1,27 @@
 .header {
   padding: 26px 0 22px;
+  transition: all var(--transition);
 
   @include mobile {
     padding: 22px 0 18px;
   }
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: var(--z-index-5);
+  }
+
+  &--show {
+    transform: translateY(0);
+  }
+
+  &--hidden {
+    transform: translateY(-100%);
+  }
+
 
   &__container {
     @include flex-all-between;
@@ -51,7 +69,10 @@
       background-color: var(--neutral-color-10);
       opacity: 0;
       visibility: hidden;
-      transition: left var(--transition), opacity var(--transition), visibility var(--transition);
+      transition:
+        left var(--transition),
+        opacity var(--transition),
+        visibility var(--transition);
 
       &--visible {
         left: 0;
