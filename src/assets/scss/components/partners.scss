@@ -40,11 +40,28 @@
     flex-wrap: wrap;
 
     @include mobile {
-      gap: 10px;
+      display: none;
     }
   }
 
   &__item {
+    @include flex-all-center;
+    border-radius: 16px;
+    width: 160px;
+    height: 90px;
+    background-color: #fff;
+  }
+
+  &__slider.swiper {
+    display: none;
+  
+    @include mobile {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &__item.swiper-slide {
     @include flex-all-center;
     border-radius: 16px;
     width: 160px;
