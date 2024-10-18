@@ -141,10 +141,30 @@
       margin-bottom: 24px;
       font-weight: 700;
       line-height: 150%;
+
+      @include small-mobile {
+        cursor: pointer;
+      }
     }
 
     @include mobile {
       min-width: 143px;
+    }
+  }
+
+  &__sublist {
+    display: block;
+
+    @include small-mobile {
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height var(--transition);
+    }
+
+    &.is-open {
+      @include small-mobile {
+        max-height: 500px;
+      }
     }
   }
 
