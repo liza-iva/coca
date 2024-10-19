@@ -6,7 +6,9 @@ import { useBurger } from './components/burger.js';
 import './components/scroll.js';
 import './components/accordion.js';
 import { usePartnersSlider } from './components/slider.js';
+import { usePhone } from './components/contact/phone.js';
 
 useTheme();
 useBurger();
 usePartnersSlider();
+usePhone();
