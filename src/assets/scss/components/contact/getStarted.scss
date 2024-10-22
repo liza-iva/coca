@@ -71,6 +71,7 @@
     &-top {
       @include flex-all-between;
       gap: 12px;
+      width: 100%;
 
       @include mobile {
         gap: 0;

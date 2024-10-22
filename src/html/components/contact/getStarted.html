@@ -13,7 +13,7 @@
           hellosansbrothers@gmail.com
         </a>
       </p>
-      <form class="get-started__form">
+      <form class="get-started__form js-form" id="form">
         <div class="get-started__form-top">
           <label class="get-started__form-label">
             <span class="get-started__form-label-text text-p-small">
@@ -21,9 +21,8 @@
             </span>
             <input
               type="text"
-              class="get-started__form-input text-p-small get-started__form-input--small"
+              class="get-started__form-input text-p-small get-started__form-input--small js-req"
               name="first-name"
-              required
               placeholder="First name"
             />
           </label>
@@ -33,20 +32,18 @@
             </span>
             <input
               type="text"
-              class="get-started__form-input text-p-small get-started__form-input--small"
+              class="get-started__form-input text-p-small get-started__form-input--small js-req"
               name="last-name"
-              required
               placeholder="Last name"
             />
           </label>
         </div>
         <label class="get-started__form-label">
-          <span class="get-started__form-label-text text-p-small"> Email </span>
+          <span class="get-started__form-label-text text-p-small">Email</span>
           <input
             type="email"
-            class="get-started__form-input text-p-small"
+            class="get-started__form-input text-p-small js-req js-email"
             name="email"
-            required
             placeholder="you@company.com"
           />
         </label>
@@ -57,9 +54,8 @@
           <input
             id="phone"
             type="tel"
-            class="get-started__form-input text-p-small"
+            class="get-started__form-input text-p-small js-req js-phone"
             name="phone"
-            required
             placeholder=""
           />
         </label>
@@ -71,11 +67,12 @@
             type="text"
             class="get-started__form-input get-started__form-input--textarea text-p-small"
             name="message"
-            required
             placeholder="Leave us a message..."
           ></textarea>
         </label>
-        <button class="get-started__form-btn button-form">Get Started</button>
+        <button class="get-started__form-btn button-form" type="submit">
+          Get Started
+        </button>
       </form>
     </div>
     <img
