@@ -60,6 +60,8 @@
   }
 
   &--active {
+    color: var(--neutral-color-130);
+
     &::before {
       top: 50%;
       transform: rotateZ(-45deg);

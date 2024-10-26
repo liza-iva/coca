@@ -1,4 +1,5 @@
 const header = document.querySelector('.header');
+const overlay = document.querySelector('.overlay');
 const headerHeight = header.offsetHeight;
 let lastScrollTop = 0;
 
@@ -22,3 +23,19 @@ window.addEventListener('scroll', () => {
 
   lastScrollTop = scrollDistance;
 });
+
+// Функция для проверки видимости overlay
+function updateHeaderTransparency() {
+  if (overlay.classList.contains('overlay--visible')) {
+    header.classList.add('header--transparent');
+  } else {
+    header.classList.remove('header--transparent');
+  }
+}
+
+// Следим за изменениями класса overlay
+const observer = new MutationObserver(updateHeaderTransparency);
+observer.observe(overlay, { attributes: true, attributeFilter: ['class'] });
+
+// Вызовем проверку прозрачности один раз при загрузке
+updateHeaderTransparency();
