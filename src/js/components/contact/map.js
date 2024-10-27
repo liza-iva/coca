@@ -1,32 +1,6 @@
+import mapMarkerIcon from '/assets/icons/location-icon.svg';
+
 export const useMap = () => {
-  // initMap();
-
-  // async function initMap() {
-  //   // Промис `ymaps3.ready` будет зарезолвлен, когда загрузятся все компоненты основного модуля API
-  //   await ymaps3.ready;
-
-  //   const { YMap, YMapDefaultSchemeLayer } = ymaps3;
-
-  //   // Иницилиазируем карту
-  //   const map = new YMap(
-  //     // Передаём ссылку на HTMLElement контейнера
-  //     document.getElementById('map'),
-
-  //     // Передаём параметры инициализации карты
-  //     {
-  //       location: {
-  //         // Координаты центра карты
-  //         center: [27.638275176010463, 19.29606083828731],
-
-  //         // Уровень масштабирования
-  //         zoom: 2,
-  //       },
-  //     },
-  //   );
-
-  //   // Добавляем слой для отображения схематической карты
-  //   map.addChild(new YMapDefaultSchemeLayer());
-  // }
 
   window.map = null;
 
@@ -6828,7 +6802,7 @@ export const useMap = () => {
     // Создание маркера
     const el = document.createElement('img');
     el.className = 'my-marker';
-    el.src = './assets/icons/location-icon.svg';
+    el.src = mapMarkerIcon;
     el.title = 'Маркер';
     // При клике на маркер меняем центр карты на LOCATION с заданным duration
     // el.onclick = () => map.update({ location: { ...LOCATION, duration: 400 } });
