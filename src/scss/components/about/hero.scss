@@ -1,0 +1,68 @@
+.hero {
+  padding: 219px 0 165px;
+
+  &__title {
+    margin-bottom: 118px;
+    max-width: 959px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+  }
+
+  &__subtitle {
+    &::before {
+      transform: translateY(-84px);
+    }
+
+    &-wrapper {
+      @include flex-all-between;
+      margin-bottom: 135px;
+    }
+  }
+
+  &__circle {
+    @include flex-all-center;
+    position: relative;
+    width: 127px;
+    height: 127px;
+    border-radius: 50%;
+
+    &-img {
+      svg {
+        rect {
+          fill: var(--neutral-color-100);
+        }
+      }
+    }
+
+    &-text {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      animation: animate 10s linear infinite;
+
+      & span {
+        position: absolute;
+        left: 50%;
+        font-family: Roboto, sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        transform-origin: 0 63px; // Размер круга 127px делить на 2
+      }
+    }
+
+    &-link {
+      position: absolute;
+      inset: 0;
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
