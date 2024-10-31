@@ -1,15 +1,38 @@
 .hero {
   padding: 219px 0 165px;
 
+  @include mini-desktop {
+    padding: 191px 0 115px;
+  }
+
   &__title {
     margin-bottom: 118px;
     max-width: 959px;
     font-weight: 700;
     letter-spacing: -0.04em;
     color: var(--neutral-color-100);
+
+    @include mini-desktop {
+      margin-bottom: 78px;
+    }
+
+    @include tablet {
+      margin-bottom: 48px;
+      text-align: center;
+    }
+
+    @include mobile {
+      margin-bottom: 38px;
+    }
+
+    @include small-mobile {
+      margin-bottom: 30px;
+    }
   }
 
   &__subtitle {
+    max-width: 770px;
+    
     &::before {
       transform: translateY(-84px);
     }
@@ -17,15 +40,53 @@
     &-wrapper {
       @include flex-all-between;
       margin-bottom: 135px;
+      flex-wrap: wrap;
+      gap: 30px;
+
+      @include mini-desktop {
+        margin-bottom: 98px;
+      }
+
+      @include tablet {
+        margin-bottom: 68px;
+      }
+
+      @include small-tablet {
+      justify-content: center;
+        text-align: center;
+      }
+
+      @include mobile {
+        margin-bottom: 58px;
+      }
+
+      @include small-mobile {
+        margin-bottom: 30px;
+      }
     }
   }
 
   &__circle {
     @include flex-all-center;
     position: relative;
+    right: 45px;
     width: 127px;
     height: 127px;
     border-radius: 50%;
+    transition: all var(--transition);
+
+    @include tablet {
+      right: 0;
+    }
+
+    @include mobile {
+      width: 100px;
+      height: 100px;
+    }
+
+    &:hover {
+      scale: 1.1;
+    }
 
     &-img {
       svg {
@@ -48,12 +109,99 @@
         font-size: 12px;
         text-transform: uppercase;
         transform-origin: 0 63px; // Размер круга 127px делить на 2
+
+        @include mobile {
+          transform-origin: 0 50px;
+        }
       }
     }
 
     &-link {
       position: absolute;
       inset: 0;
+    }
+  }
+
+  &__container {
+    overflow: hidden;
+  }
+
+  &__slider {
+    width: 1350px;
+
+    @include tablet {
+      width: 100%;
+    }
+  }
+
+  &__article {
+    &-img {
+      margin-bottom: 24px;
+
+      @include mobile {
+        margin-bottom: 10px;
+      }
+    }
+
+    &-title {
+      margin-bottom: 8px;
+      font-weight: 600;
+      line-height: 150%;
+      letter-spacing: -0.01em;
+      color: var(--neutral-color-100);
+
+      @include mobile {
+        margin-bottom: 4px;
+      }
+    }
+
+    &-text {
+      margin-bottom: 32px;
+      font-weight: 500;
+      line-height: 178%;
+      color: var(--neutral-color-150);
+      max-width: 494px;
+
+      @include mobile {
+        margin-bottom: 15px;
+      }
+    }
+  }
+
+  &__btn {
+    padding: 16px 35px;
+    color: var(--neutral-color-10);
+    background-color: var(--neutral-color-100);
+
+    @include small-tablet {
+      padding: 12px 32px;
+    }
+  }
+
+  &__pagination.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    transform: none;
+  }
+
+  &__pagination {
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .swiper-pagination-bullet {
+      width: 14px;
+      height: 14px;
+      background-color: var(--neutral-color-150);
+      opacity: 0.5;
+      transform: none;
+
+      @include small-mobile {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: var(--neutral-color-100);
     }
   }
 }
