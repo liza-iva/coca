@@ -1,0 +1,44 @@
+.ideas {
+  &__container {
+    @include flex-all-between;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    border-top: 1px solid var(--neutral-color-30);
+    border-bottom: 1px solid var(--neutral-color-30);
+
+    @include tablet {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    @include mobile {
+      padding-top: 60px;
+      padding-bottom: 60px;
+    }
+  }
+
+  &__title {
+    max-width: 480px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include tablet {
+      margin-bottom: 30px;
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__descr {
+    max-width: 472px;
+    font-weight: 600;
+    line-height: 150%;
+    color: var(--neutral-color-100);
+
+    @include tablet {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+}

@@ -37,10 +37,34 @@ export const useHeroSlider = () => {
         centeredSlides:  true,
         spaceBetween: 32,
       },
-      // 1201: {
-      //   slidesPerView: 2.59,
-      //   centeredSlides:  true,
-      // },
+    },
+  });
+};
+
+export const useTeamSlider = () => {
+  new Swiper('.team__slider', {
+    slidesPerView: 1.6,
+    spaceBetween: 15,
+    centeredSlides:  true,
+    loop: true,
+    modules: [Pagination],
+    pagination: {
+      el: '.team__pagination',
+      dynamicBullets: true,
+      clickable: true,
+    },
+    breakpoints: {
+      381: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      577: {
+        slidesPerView: 3,
+      },
+      993: {
+        slidesPerView: 3,
+        spaceBetween: 32,
+      },
     },
   });
 };

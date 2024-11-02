@@ -1,0 +1,189 @@
+.team {
+  padding: 160px 0;
+
+  @include tablet {
+    padding: 100px 0;
+  }
+
+  @include mobile {
+    padding: 60px 0;
+  }
+
+  &__title {
+    max-width: 685px;
+    margin-bottom: 24px;
+    font-weight: 600;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include tablet {
+      max-width: 100%;
+      text-align: center;
+    }
+  }
+
+  &__descr {
+    max-width: 525px;
+    margin-bottom: 80px;
+    font-weight: 500;
+    line-height: 178%;
+    color: var(--neutral-color-150);
+
+    @include tablet {
+      max-width: 100%;
+      text-align: center;
+    }
+
+    @include mobile {
+      margin-bottom: 60px;
+    }
+  }
+
+  &__article {
+    &-img {
+      margin-bottom: 16px;
+    }
+
+    &-info {
+      @include flex-start-between;
+
+      @include tablet {
+        @include flex-column;
+      }
+    }
+
+    &-name {
+      margin-bottom: 8px;
+      font-weight: 600;
+      line-height: 150%;
+      color: var(--neutral-color-100);
+    }
+
+    &-position {
+      font-weight: 500;
+      line-height: 150%;
+      color: var(--neutral-color-150);
+
+      @include tablet {
+        margin-bottom: 8px;
+      }
+    }
+
+    &-socials {
+      @include flex-all-between;
+      gap: 8px;
+    }
+
+    &-link {
+      @include flex-all-center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--grey-bg-color);
+    }
+
+    & path {
+      fill: var(--socials-color);
+    }
+  }
+
+  &__pagination.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
+    transform: none;
+  }
+
+  &__pagination {
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .swiper-pagination-bullet {
+      width: 14px;
+      height: 14px;
+      background-color: var(--neutral-color-150);
+      opacity: 0.5;
+      transform: none;
+
+      @include small-mobile {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: var(--neutral-color-100);
+    }
+  }
+
+  &__job {
+    @include flex-all-between;
+    margin-top: 100px;
+    
+
+    @include tablet {
+      @include flex-column-all-center;
+      margin-top: 80px;
+    }
+
+    @include mobile {
+      margin-top: 60px;
+    }
+
+    &-title {
+      max-width: 626px;
+      font-weight: 600;
+      letter-spacing: -0.04em;
+      color: var(--neutral-color-100);
+
+      @include tablet {
+        margin-bottom: 30px;
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+    &-info {
+      max-width: 503px;
+
+      @include tablet {
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+    &-descr {
+      margin-bottom: 24px;
+      font-weight: 500;
+      line-height: 178%;
+      color: var(--neutral-color-150);
+    }
+
+    &-btn {
+      position: relative;
+      font-weight: 600;
+      line-height: 150%;
+      color: var(--neutral-color-100);
+
+      &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+        left: 0;
+        height: 1px;
+        background-color: var(--neutral-color-100);
+        opacity: 0;
+        visibility: hidden;
+        transition:
+          opasity var(--transition),
+          visibility var(--transition);
+      }
+
+      &:hover {
+        &::after {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+  }
+}

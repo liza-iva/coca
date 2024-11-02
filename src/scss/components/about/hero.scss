@@ -5,6 +5,22 @@
     padding: 191px 0 115px;
   }
 
+  @include mobile {
+    padding-bottom: 60px;
+  }
+
+  &-decor {
+    &::before {
+      top: 1186px;
+      left: 21px;
+    }
+
+    &::after {
+      top: 1934px;
+      right: 0;
+    }
+  }
+
   &__title {
     margin-bottom: 118px;
     max-width: 959px;
@@ -31,8 +47,14 @@
   }
 
   &__subtitle {
-    max-width: 770px;
-    
+    max-width: 780px;
+
+    @include small-tablet {
+      & br {
+        display: none;
+      }
+    }
+
     &::before {
       transform: translateY(-84px);
     }
