@@ -200,10 +200,6 @@
     }
   }
 
-  &__pagination.swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic {
-    transform: none;
-  }
-
   &__pagination {
     margin-top: 30px;
     margin-right: auto;
@@ -214,7 +210,6 @@
       height: 14px;
       background-color: var(--neutral-color-150);
       opacity: 0.5;
-      transform: none;
 
       @include small-mobile {
         width: 10px;
