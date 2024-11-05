@@ -1,28 +1,73 @@
-export const useHeroTab = () => {
-  document.querySelectorAll('.tab-controls').forEach(tabControls => {
+export const useSwitchTabs = () => {
+  const tabControls = document.querySelector('.hero__tabs-list');
 
-  tabControls.addEventListener('click', toggleTab)
+  tabControls.addEventListener('click', toggleTab);
 
-  function toggleTab(e) {
+  function toggleTab(event) {
+    const tabControl = event.target.closest('.hero__tabs-link');
+    if (!tabControl) return;
+    event.preventDefault();
 
-      const tabControl = e.target.closest('.tab-controls__link')
+    const activeControl = document.querySelector('.hero__tabs-link--active');
+    if (activeControl) {
+      activeControl.classList.remove('hero__tabs-link--active');
+    }
+    tabControl.classList.add('hero__tabs-link--active');
 
-      if (!tabControl) return
-      e.preventDefault()
-      if (tabControl.classList.contains('tab-controls__link--active')) return
+    // Получаем идентификатор выбранного таба
+    const tabName = tabControl.dataset.id;
+    getItems(tabName);
 
-      const tabContentID = tabControl.getAttribute('href')
-      const tabContent = tabControls.closest('.tab-container').querySelector(tabContentID)
-      const activeControl = tabControls.querySelector('.tab-controls__link--active')
-      const activeContent = tabControls.closest('.tab-container').querySelector('.tab-content--show')
+    // Создаем событие переключения таба
+    const tabChangeEvent = new CustomEvent('tabChange', { detail: { tabName } });
+    document.dispatchEvent(tabChangeEvent); // Отправляем событие
+  }
 
-      if (activeContent) {
-          activeControl.classList.remove('tab-controls__link--active')
-          activeContent.classList.remove('tab-content--show')
+  const items = document.querySelectorAll('.hero__slider-item');
+
+  function filterTabs() {
+    tabControls.addEventListener('click', (e) => {
+      let target = e.target;
+
+      while (target && target !== tabControls && !target.dataset.id) {
+        target = target.parentElement;
       }
 
-      tabControl.classList.add('tab-controls__link--active')
-      tabContent.classList.add('tab-content--show')
+      if (target && target.dataset.id) {
+        const itemId = target.dataset.id;
+
+        switch (itemId) {
+          case 'all-Tab':
+            getItems(itemId);
+            break;
+          case 'design-Tab':
+            getItems(itemId);
+            break;
+          case 'articles-Tab':
+            getItems(itemId);
+            break;
+          case 'product-Tab':
+            getItems(itemId);
+            break;
+          case 'software-development-Tab':
+            getItems(itemId);
+            break;
+          case 'customer-success-Tab':
+            getItems(itemId);
+            break;
+        }
+      }
+    });
   }
-});
-}
+  filterTabs();
+
+  function getItems(tabName) {
+    items.forEach((item) => {
+      if (item.classList.contains(tabName)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }
+};

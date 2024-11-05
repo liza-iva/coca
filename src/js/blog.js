@@ -5,10 +5,10 @@ import { useTheme } from './components/theme.js';
 import { useBurger } from './components/burger.js';
 import './components/scroll.js';
 import './components/accordion.js';
-import { useHeroTab } from './components/blog/tab.js';
-import { useHeroSlider } from './components/blog/blogSlider.js';
+import { useSwitchTabs } from './components/blog/tab.js';
+import { useBlogHeroSlider } from './components/slider.js';
 
 useTheme();
 useBurger();
-useHeroTab();
-useHeroSlider();
+useSwitchTabs();
+useBlogHeroSlider();
