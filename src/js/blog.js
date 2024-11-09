@@ -6,9 +6,10 @@ import { useBurger } from './components/burger.js';
 import './components/scroll.js';
 import './components/accordion.js';
 import { useSwitchTabs } from './components/blog/tab.js';
-import { useBlogHeroSlider } from './components/slider.js';
+import { useBlogHeroSlider, useBlogSectionSlider } from './components/slider.js';
 
 useTheme();
 useBurger();
 useSwitchTabs();
 useBlogHeroSlider();
+useBlogSectionSlider();

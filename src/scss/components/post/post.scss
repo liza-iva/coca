@@ -1,0 +1,160 @@
+.post {
+  padding: 194px 0 160px;
+
+  @include tablet {
+    padding: 164px 0 130px;
+  }
+
+  @include mobile {
+    padding: 134px 0 100px;
+  }
+
+
+  &__container {
+    max-width: 940px;
+  }
+
+  &__title {
+    margin-bottom: 80px;
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: var(--neutral-color-100);
+
+    @include mobile {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+  }
+
+  &__publish {
+    @include flex-end-between;
+    margin-bottom: 14px;
+
+    @include mobile {
+      @include flex-column;
+      align-items: start;
+      gap: 15px;
+    }
+
+    &-author {
+      @include flex-align-center;
+      gap: 24px;
+      font-style: normal;
+    }
+
+    &-img {
+      border-radius: 50%;
+    }
+
+    &-name {
+      margin-bottom: 4px;
+      font-weight: 600;
+      line-height: 144%;
+      color: var(--neutral-color-100);
+    }
+
+    &-professions {
+      font-weight: 500;
+      line-height: 162%;
+      color: var(--neutral-color-150);
+    }
+
+    &-date {
+      font-weight: 500;
+      line-height: 150%;
+      color: var(--neutral-color-150);
+    }
+  }
+
+  &__img {
+    margin-bottom: 80px;
+
+    @include mobile {
+      margin-bottom: 40px;
+    }
+  }
+
+  &__text {
+    margin-bottom: 56px;
+    font-weight: 400;
+    line-height: 178%;
+    color: var(--neutral-color-100);
+
+    @include mobile {
+      margin-bottom: 36px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 24px;
+    font-weight: 600;
+    color: var(--neutral-color-140);
+  }
+
+  &__info {
+    @include flex-align-start;
+    gap: 48px;
+
+    @include mobile {
+      flex-wrap: wrap;
+    }
+
+    &-socials {
+      @include flex-align-center;
+      margin-bottom: 14px;
+
+      &-text {
+        margin-left: 24px;
+        font-weight: 500;
+        line-height: 162%;
+        color: var(--neutral-color-100);
+      }
+    }
+
+    &-item {
+      margin-right: 32px;
+
+      @include small-mobile {
+        margin-right: 20px;
+      }
+
+      &:nth-last-child(2) {
+        margin-right: 0px;
+      }
+    }
+
+    &-link {
+      @include flex-all-center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: var(--grey-bg-color);
+    }
+
+    & path {
+      fill: var(--socials-color);
+    }
+
+    &-text {
+      margin-bottom: 16px;
+      font-weight: 400;
+      line-height: 150%;
+      color: var(--neutral-color-150);
+    }
+
+    &-name {
+      margin-bottom: 16px;
+      font-weight: 600;
+      line-height: 131%;
+      letter-spacing: -0.03em;
+      color: var(--neutral-color-100);
+    }
+
+    &-descr {
+      max-width: 645px;
+      font-weight: 400;
+      line-height: 178%;
+      color: var(--neutral-color-100);
+    }
+  }
+}

@@ -173,3 +173,33 @@ export const useBlogHeroSlider = () => {
   // Инициализируем слайдер при загрузке
   initSwiper();
 };
+
+export const useBlogSectionSlider = () => {
+  new Swiper('.section__slider', {
+    slidesPerView: 'auto',
+    spaceBetween: 16,
+    centeredSlides: true,
+    loop: true,
+    modules: [Navigation],
+    navigation: {
+      nextEl: '.section__btn--next',
+      prevEl: '.section__btn--prev',
+    },
+    breakpoints: {
+      577: {
+        slidesPerView: 2,
+        centeredSlides: true,
+        spaceBetween: 16,
+      },
+      769: {
+        slidesPerView: 2.5,
+        centeredSlides: false,
+        spaceBetween: 16,
+      },
+      993: {
+        slidesPerView: 2.9,
+        centeredSlides: false,
+        spaceBetween: 32,
+      },
+    },
+  })};
