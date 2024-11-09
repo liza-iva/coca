@@ -152,18 +152,19 @@
     }
 
     &-arrow {
-      width: 10px;
-      height: 10px;
-      border-top: 2px solid #fff;
-      border-right: 2px solid #fff;
-      margin: 3px 10px;
-      transform: rotate(135deg);
-      display: inline-block;
-      // transform-origin: 5px 5px;
+      @include small-mobile {
+        width: 10px;
+        height: 10px;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+        margin: 3px 10px;
+        transform: rotate(135deg);
+        display: inline-block;
 
-      &.flip {
-        margin: -3px 10px;
-        transform: rotate(-135deg) scaleY(-1); /* Отражение по вертикали */
+        &.flip {
+          margin: -3px 10px;
+          transform: rotate(-135deg) scaleY(-1); /* Отражение по вертикали */
+        }
       }
     }
   }
