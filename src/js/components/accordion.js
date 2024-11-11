@@ -1,4 +1,4 @@
-const minWidth = 380;
+const minWidth = 576;
 
 function toggleAccordion() {
   const titles = document.querySelectorAll('.js-accordion-title');

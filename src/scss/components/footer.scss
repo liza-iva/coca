@@ -152,7 +152,7 @@
     }
 
     &-arrow {
-      @include small-mobile {
+      @include mobile {
         width: 10px;
         height: 10px;
         border-top: 2px solid #fff;
@@ -172,14 +172,14 @@
   &__sublist {
     display: block;
 
-    @include small-mobile {
+    @include mobile {
       overflow: hidden;
       max-height: 0;
       transition: max-height var(--transition);
     }
 
     &.is-open {
-      @include small-mobile {
+      @include mobile {
         max-height: 500px;
       }
     }
